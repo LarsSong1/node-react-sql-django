@@ -1,26 +1,18 @@
-import {Router} from express
-import db from "../db"
+import { Router } from 'express';
+import {createRegister, deleteRegister, getRegisters, getUniqueRegister, updateRegister} from '../controllers/crudController.js'
 
 
-const router = Router()
+const router = Router();
 
-router.get('/registers', (req, res) => {
-
-})
-
-
-router.get('/registers/:id', (req, res)=> {
-
-})
-
-
-router.post('/registers', (req, res) => {
-
-})
+router.get('/registers', getRegisters);
+router.get('/registers/:id', getUniqueRegister)
+router.post('/registers', createRegister)
+router.put('/registers/:id', updateRegister)
+router.delete('/registers/:id', deleteRegister)
 
 
 
-router.put('/registers/:id', (req, res) => {
-    
-})
 
+
+
+export default router
